@@ -1,0 +1,78 @@
+<svg width="1450" height="700" viewBox="0 0 1450 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Logo Icon -->
+  <g transform="translate(40,40) scale(1.25)">
+
+    <!-- Triangle Face -->
+    <path d="
+                  M256 66
+                  L410 192
+                  L340 420
+                  H172
+                  L102 192
+      Z"
+      fill="none"
+      stroke="white"
+                  stroke-width="22"
+      stroke-linejoin="round"/>
+
+    <!-- T Shape -->
+    <rect x="176" y="172"
+          width="160"
+          height="28"
+          rx="14"
+          fill="white"/>
+
+    <rect x="236" y="172"
+          width="40"
+          height="118"
+          rx="20"
+          fill="white"/>
+
+    <!-- Thumbnail Eyes -->
+    <rect x="164" y="244"
+          width="60"
+          height="42"
+          rx="10"
+          fill="white"/>
+
+    <rect x="288" y="244"
+          width="60"
+          height="42"
+          rx="10"
+          fill="white"/>
+
+    <!-- Mouth -->
+    <mask id="mouthMask">
+      <rect width="512" height="512" fill="black"/>
+
+      <rect x="214" y="334"
+            width="100"
+            height="60"
+            rx="18"
+            fill="white"/>
+
+      <!-- Transparent Play Symbol -->
+      <path d="M252 348L286 364L252 380V348Z"
+            fill="black"/>
+    </mask>
+
+    <rect width="512"
+          height="512"
+          fill="white"
+          mask="url(#mouthMask)"/>
+
+  </g>
+
+  <!-- Brand Name -->
+      <text x="580"
+        y="395"
+        fill="white"
+        font-family="Inter, Poppins, Arial, sans-serif"
+        font-size="150"
+        font-weight="700"
+        letter-spacing="0">
+    THUMBLER
+  </text>
+
+</svg>
