@@ -1,42 +1,43 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#000"/>
 
-  <!-- Triangle Face -->
+  <!-- Triangle Face (Enlarged) -->
   <path d="
-    M256 92
-    L384 196
-    L324 392
-    H188
-    L128 196
+    M256 60
+    L420 180
+    L360 420
+    H152
+    L92 180
     Z"
     fill="none"
     stroke="white"
-    stroke-width="12"
+    stroke-width="20"
     stroke-linejoin="round"/>
 
-  <!-- T Shape -->
-  <rect x="176" y="172"
-        width="160"
-        height="28"
-        rx="14"
-        fill="white"/>
-
-  <rect x="236" y="172"
-        width="40"
-        height="118"
-        rx="20"
-        fill="white"/>
-
-  <!-- Thumbnail Eyes -->
-  <rect x="170" y="228"
-        width="60"
+  <!-- T Shape (Larger) -->
+  <rect x="160" y="140"
+        width="192"
         height="42"
-        rx="10"
+        rx="21"
         fill="white"/>
 
-  <rect x="282" y="228"
-        width="60"
-        height="42"
-        rx="10"
+  <rect x="224" y="140"
+        width="64"
+        height="160"
+        rx="32"
+        fill="white"/>
+
+  <!-- Thumbnail Eyes (Bigger) -->
+  <rect x="140" y="220"
+        width="80"
+        height="60"
+        rx="15"
+        fill="white"/>
+
+  <rect x="292" y="220"
+        width="80"
+        height="60"
+        rx="15"
         fill="white"/>
 
   <!-- Play Mouth -->
@@ -44,14 +45,14 @@
     <rect width="512" height="512" fill="black"/>
     
     <!-- Mouth -->
-    <rect x="206" y="314"
-          width="100"
-          height="60"
-          rx="18"
+    <rect x="186" y="320"
+          width="140"
+          height="80"
+          rx="25"
           fill="white"/>
 
     <!-- Transparent Play Symbol -->
-    <path d="M244 328L278 344L244 360V328Z"
+    <path d="M234 340L294 372L234 404V340Z"
           fill="black"/>
   </mask>
 
