@@ -2,43 +2,43 @@ import type { IPricing } from "../types";
 
 export const pricingData: IPricing[] = [
     {
-        name: "Basic",
-        price: 29,
+        name: "Free",
+        price: 0,
         period: "month",
         features: [
-            "Access to all basic courses",
-            "Community support",
-            "10 practice projects",
-            "Course completion certificate",
-            "Basic code review"
+            "AI-powered thumbnail generation",
+            "Standard support",
+            "Access to core templates",
+            "High-quality exports",
+            "Basic customization tools"
         ],
         mostPopular: false
     },
     {
         name: "Pro",
-        price: 79,
+        price: 69,
         period: "month",
         features: [
-            "Access to all Pro courses",
-            "Priority community support",
-            "30 practice projects",
-            "Course completion certificate",
-            "Advance code review",
-            "1-on-1 mentoring sessions",
-            "Job assistance"
+            "Unlimited thumbnail generation",
+            "Priority support",
+            "Premium templates and styles",
+            "Advanced editing controls",
+            "Faster AI processing",
+            "Brand customization tools",
+            "High-resolution exports"
         ],
         mostPopular: true
     },
     {
         name: "Enterprise",
-        price: 199,
+        price: 99,
         period: "month",
         features: [
-            "Access to all courses",
-            "Dedicated support",
-            "Unlimited projects",
-            "Course completion certificate",
-            "Premium code review"
+            "Everything included in Pro",
+            "Dedicated account support",
+            "Unlimited team workspaces",
+            "Custom enterprise solutions",
+            "Advanced workflow management"
         ],
         mostPopular: false
     }

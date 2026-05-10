@@ -4,6 +4,10 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./globals.css";
 import LenisScroll from "./components/LenisScroll";
+import Create from "./pages/create";
+import Dashboard from "./pages/Dashboard";
+import YTPreview from "./pages/YTPreview";
+import Login from "./components/Login";
 
 export default function App() {
     return (
@@ -12,6 +16,14 @@ export default function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/create" element={<Create />} />
+                <Route path="/create/:id" element={<Create />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/preview" element={<YTPreview />} />
+                <Route path="/login" element={<Login />} />
+
+
+
             </Routes>
             <Footer />
         </>
