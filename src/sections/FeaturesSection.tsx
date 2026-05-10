@@ -8,7 +8,7 @@ import type { IFeature } from "../types";
 export default function FeaturesSection() {
     return (
         <div id="features" className="px-4 md:px-16 lg:px-24 xl:px-32">
-            <SectionTitle text1="Features" text2="What you get" text3="Components, patterns and pages — everything you need to ship." />
+            <SectionTitle text1="Features" text2="Powerful Features for Modern Content Creation" text3="AI-powered tools built to streamline thumbnail creation and deliver professional-quality results at scale." />
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-4 mt-16 px-6">
                 {featuresData.map((feature: IFeature, index: number) => (
                     <motion.div key={index} className={`${index === 1 ? 'p-px rounded-[13px] bg-linear-to-br from-pink-600 to-slate-800' : ''}`}
@@ -18,7 +18,7 @@ export default function FeaturesSection() {
                         transition={{ delay: index * 0.15, type: "spring", stiffness: 320, damping: 70, mass: 1 }}
                     >
                         <div className="p-6 rounded-xl space-y-4 border border-slate-800 bg-slate-950 max-w-80 w-full">
-                            {feature.icon}
+                            <img src={feature.icon} alt={feature.title} className="size-10" />
                             <h3 className="text-base font-medium text-white">
                                 {feature.title}
                             </h3>
@@ -37,8 +37,7 @@ export default function FeaturesSection() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
                 >
-                    PrebuiltUI helps you build faster by transforming your design vision into fully functional, production-ready UI components.
-                </motion.p>
+                    Thumbler helps creators generate professional, high-performing thumbnails using advanced AI tools designed to improve visual quality, increase engagement, and streamline the content creation process.                </motion.p>
                 <div className="grid grid-cols-1 md:grid-cols-3 mt-8 gap-10">
                     <motion.div className="md:col-span-2"
                         initial={{ y: 150, opacity: 0 }}
