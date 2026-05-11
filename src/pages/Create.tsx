@@ -1,6 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import SoftBackdrop from "../components/SoftBackdrop";
+import AspectRatioSelector from "../components/AscpectRatioSelector";
+import StyleSelector from "../components/StyleSelector";
+import { colorSchemes, type AspectRatio, type ThumbnailStyle } from "../assests/assets";
 
 
 const Create = () => {
@@ -9,12 +12,29 @@ const Create = () => {
 	const [title, setTitle] = useState("");
 	const [additionalDetails, setAdditionalDetails] = useState("");
 
+	const [aspectRatio, setAspectRatio] = useState<AspectRatio>("16:9");
+	const [colorScheme, setColorScheme] = useState<string>(colorSchemes[0].id);
+	const [style, setStyle] = useState<ThumbnailStyle>("Bold & Graphic");
+
+	const [styleDropdownOpen, setStyleDropdownOpen] = useState(false);
+
 	const handleAdditionalDetailsChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		setAdditionalDetails(e.target.value);
 		e.target.style.height = "96px";
 		e.target.style.height = `${Math.max(e.target.scrollHeight, 96)}px`;
 	};
 
+	const handleGenerateThumbnail = () => {
+		// TODO: Call API to generate thumbnail with:
+		// { title, additionalDetails, aspectRatio, colorScheme, style }
+		console.log({
+			title,
+			additionalDetails,
+			aspectRatio,
+			colorScheme,
+			style,
+		});
+	};
 
 	return (
 		<>
@@ -39,10 +59,11 @@ const Create = () => {
 									</div>
 
 									{/* AspectRatioSelector */}
+									<AspectRatioSelector value={aspectRatio} onChange={setAspectRatio}/>
+									
 									{/* StyleSelector */}
-									{/* ColorSchemeSelector */}
-
-									{/* DETAILS */}
+									<StyleSelector value={style} onChange={setStyle} isOpen={styleDropdownOpen} setIsOpen={setStyleDropdownOpen}/>
+						{/* ColorSchemeSelector */}
 									<div className="space-y-2">
 										<label className="block text-sm font-medium">
 											Additional Prompts <span className="text-zinc-400 text-xs">(optional)</span>
@@ -55,7 +76,7 @@ const Create = () => {
 								
 								{/* button */}
 								{!id && (
-									<button className="mt-4 text-[15px] w-full py-3.5 rounded-xl font-medium bg-gradient-to-b from-pink-500 to-pink-600 hover:from-pink-700 disabled:cursor-not-allowed transition-colors">
+									<button onClick={handleGenerateThumbnail} className="mt-4 text-[15px] w-full py-3.5 rounded-xl font-medium bg-gradient-to-b from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 disabled:cursor-not-allowed transition-colors">
 										Generate Thumbnail
 									</button>
 								)}
