@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 import SoftBackdrop from "../components/SoftBackdrop";
 import AspectRatioSelector from "../components/AscpectRatioSelector";
 import StyleSelector from "../components/StyleSelector";
-import { colorSchemes, type AspectRatio, type ThumbnailStyle } from "../assests/assets";
+import { colorSchemes, type AspectRatio, type ThumbnailStyle, type IThumbnail } from "../assests/assets";
 import ColorSchemeSelector from "../components/ColorSchemeSelector";
+import PreviewPanel from "../components/PreviewPanel";
 
 
 const Create = () => {
@@ -16,6 +17,9 @@ const Create = () => {
 	const [aspectRatio, setAspectRatio] = useState<AspectRatio>("16:9");
 	const [colorScheme, setColorScheme] = useState<string>(colorSchemes[0].id);
 	const [style, setStyle] = useState<ThumbnailStyle>("Bold & Graphic");
+
+	const [thumbnail, setThumbnail] = useState<IThumbnail | null>(null);
+	const [loading, setLoading] = useState<boolean>(false);
 
 	const [styleDropdownOpen, setStyleDropdownOpen] = useState(false);
 
@@ -86,7 +90,12 @@ const Create = () => {
 							
 						</div>
 						{/* RIGHT PANEL */}
-						<div></div>
+						<div>
+							<div className="mt-4 p-6 rounded-2xl bg-white/8 border border-white/10 shadow-xl">
+								<h2 className="text-lg font-semibold text-zinc-100 mb-4">Preview</h2>
+								<PreviewPanel thumbnail={thumbnail} isLoading={loading} aspectRatio={aspectRatio} />
+							</div>
+						</div>
 					</div>
 				</main>
 			</div>
