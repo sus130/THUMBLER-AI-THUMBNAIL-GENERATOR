@@ -4,6 +4,7 @@ import SoftBackdrop from "../components/SoftBackdrop";
 import AspectRatioSelector from "../components/AscpectRatioSelector";
 import StyleSelector from "../components/StyleSelector";
 import { colorSchemes, type AspectRatio, type ThumbnailStyle } from "../assests/assets";
+import ColorSchemeSelector from "../components/ColorSchemeSelector";
 
 
 const Create = () => {
@@ -43,7 +44,7 @@ const Create = () => {
 				<main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-28 lg:pb-8">
 					<div className="grid lg:grid-cols-[400px_1fr] gap-8">
 						{/* LEFT PANEL */}
-						<div className={`space-y-6 ${id && 'pointer-events-none'}`}>
+						<div className="space-y-6">
 							<div className="mt-4 p-6 rounded-2xl bg-white/8 border border-white/12 shadow-xl space-y-6">
 								<h2 className="text-2xl font-bold text-white">Create Your Thumbnail</h2>
 								<p className="text-white/70">Describe your idea and let AI generate a professional thumbnail for your content.</p>
@@ -64,6 +65,7 @@ const Create = () => {
 									{/* StyleSelector */}
 									<StyleSelector value={style} onChange={setStyle} isOpen={styleDropdownOpen} setIsOpen={setStyleDropdownOpen}/>
 						{/* ColorSchemeSelector */}
+						<ColorSchemeSelector value={colorScheme} onChange={setColorScheme}/>
 									<div className="space-y-2">
 										<label className="block text-sm font-medium">
 											Additional Prompts <span className="text-zinc-400 text-xs">(optional)</span>
