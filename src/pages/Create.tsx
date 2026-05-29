@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SoftBackdrop from "../components/SoftBackdrop";
 import AspectRatioSelector from "../components/AscpectRatioSelector";
 import StyleSelector from "../components/StyleSelector";
-import { colorSchemes, type AspectRatio, type ThumbnailStyle, type IThumbnail } from "../assests/assets";
+import { colorSchemes, type AspectRatio, type ThumbnailStyle, type IThumbnail, dummyThumbnails } from "../assests/assets";
 import ColorSchemeSelector from "../components/ColorSchemeSelector";
 import PreviewPanel from "../components/PreviewPanel";
 
@@ -23,10 +23,37 @@ const Create = () => {
 
 	const [styleDropdownOpen, setStyleDropdownOpen] = useState(false);
 
+	const handleGenerate = async () => {
+		// placeholder for generate logic
+	};
+
+	const fetchThumbnail = async () => {
+		if (id) {
+			const thumbnail: any = dummyThumbnails.find((t) => t._id === id);
+			if (thumbnail) {
+				setThumbnail(thumbnail);
+				setAdditionalDetails(thumbnail.user_prompt || thumbnail.prompt_used || "");
+				setTitle(thumbnail.title || "");
+				setColorScheme(thumbnail.color_scheme || colorSchemes[0].id);
+				setAspectRatio((thumbnail.aspect_ratio as AspectRatio) || "16:9");
+				setStyle((thumbnail.style as ThumbnailStyle) || "Bold & Graphic");
+			}
+		}
+		setLoading(false);
+	};
+
+	useEffect(() => {
+		if (id) {
+			fetchThumbnail();
+		}
+	}, [id]);
+
 	const handleAdditionalDetailsChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-		setAdditionalDetails(e.target.value);
-		e.target.style.height = "96px";
-		e.target.style.height = `${Math.max(e.target.scrollHeight, 96)}px`;
+		const ta = e.currentTarget;
+		const value = ta.value;
+		setAdditionalDetails(value);
+		ta.style.height = "96px";
+		ta.style.height = `${Math.max(ta.scrollHeight, 96)}px`;
 	};
 
 	const handleGenerateThumbnail = () => {
